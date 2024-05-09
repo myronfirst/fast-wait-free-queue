@@ -4,6 +4,9 @@ CC = gcc
 CFLAGS = -g -Wall -O3 -pthread -D_GNU_SOURCE
 LDLIBS = -lpthread -lm
 
+VERIFY = 1
+SANITIZE = 0
+
 ifeq (${VERIFY}, 1)
 	CFLAGS += -DVERIFY
 endif
