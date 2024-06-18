@@ -1,3 +1,36 @@
+# HY586 Project Section
+- Build
+```
+make
+```
+- Run script to produce benchmark times
+```
+chmod +x benchmark
+TESTS=wfqueue:lcrq PROCS=1:2:4:8:16:32:48:64:96 ./benchmark
+//results in stdout
+```
+(regarding results format: The first column of benchmark's output is the number threads. Then every two columns are the *mean running time* and *margin of error* for each implementation). (Also, lcrq benchmark may segfault. If this happens you need to manually run it a couple of times until you get runs without crashes)
+
+- Produce plot. Copy mean of elapsed times to your own `MyTraces.csv` and use python to run `plot.py`. Consult project submit report to find `plot.py` and a default `Traces.csv`.
+```
+// Install pip and latest version of python
+pip install pandas
+pip install matplotlib
+pip install seaborn
+// Copy mean of elapsed times to your own `MyTraces.csv`
+python plot.py MyTraces.csv
+// results in figure.pdf
+```
+
+## Other options
+- For benchmark result validation, set `VERIFY = 1` in `Makefile`
+- To edit benchmark workload, edit the pre-processor definition `LOGN_OPS` in `pairwise.c`
+- To independently run a benchmark
+```
+./wfqueue THREAD_NUM LOGN_OPS
+./lcrq THREAD_NUM LOGN_OPS
+```
+
 # Fast Wait Free Queue
 
 This is a benchmark framework for evaluating the performance of concurrent queues. Currently, it contains four concurrent queue implementations. They are:
