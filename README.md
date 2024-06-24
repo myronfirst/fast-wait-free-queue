@@ -11,7 +11,7 @@ TESTS=wfqueue:lcrq PROCS=1:2:4:8:16:32:48:64:96 ./benchmark
 ```
 (regarding results format: The first column of benchmark's output is the number threads. Then every two columns are the *mean running time* and *margin of error* for each implementation). (Also, lcrq benchmark may segfault. If this happens you need to manually run it a couple of times until you get runs without crashes)
 
-- Produce plot. Copy mean of elapsed times to your own `MyTraces.csv` and use python to run `plot.py`. Consult project submit report to find `plot.py` and a default `Traces.csv`.
+- Produce plot. Copy mean of elapsed times to your own `MyTraces.csv` and use python to generate the plot. Consult project submit report to find the plot generation scripts.
 ```
 // Install pip and latest version of python
 pip install pandas
