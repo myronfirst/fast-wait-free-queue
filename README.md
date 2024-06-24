@@ -19,7 +19,7 @@ pip install matplotlib
 pip install seaborn
 // Copy mean of elapsed times to your own `MyTraces.csv`
 python plot.py MyTraces.csv
-// results in figure.pdf
+// results in MyTraces.pdf
 ```
 
 ## Other options
